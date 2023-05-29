@@ -1,6 +1,6 @@
 CREATE TABLE Brasileirao (
     ID INT PRIMARY KEY NOT NULL,
-    Nome_ VARCHAR(50),
+    Nome VARCHAR(50),
     Pontos INT,
     JogosDisputados INT,
     Vitorias INT,
