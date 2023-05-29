@@ -141,11 +141,9 @@ VALUES
 CREATE TRIGGER atualizar_pontos_jogos AFTER INSERT ON Jogadores
 FOR EACH ROW
 BEGIN
-    DECLARE time_id INT;
-    SET time_id = NEW.TimeID;
-    
     UPDATE Brasileirao
     SET JogosDisputados = JogosDisputados + 1,
         Pontos = (Vitorias * 3) + Empates
-    WHERE ID = time_id;
+    WHERE ID = NEW.TimeID;
 END;
+
