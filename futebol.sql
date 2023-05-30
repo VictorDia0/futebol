@@ -141,11 +141,15 @@ CREATE DATABASE FUTEBOL;
             (19, 19, '2023-05-07'),
             (20, 20, '2023-05-14');
 
-        CREATE TRIGGER atualizar_pontos_jogos AFTER INSERT ON Jogadores
-        FOR EACH ROW
-        BEGIN
-            UPDATE Brasileirao
-            SET JogosDisputados = JogosDisputados + 1,
-                Pontos = (Vitorias * 3) + Empates
-            WHERE ID = NEW.TimeID;
-        END;
+            DELIMITER $
+
+                CREATE TRIGGER atualizar_pontos_jogos AFTER INSERT ON Jogadores
+                FOR EACH ROW
+                BEGIN
+                    UPDATE Brasileirao
+                    SET JogosDisputados = JogosDisputados + 1,
+                        Pontos = (Vitorias * 3) + Empates
+                    WHERE ID = NEW.TimeID;
+                END $
+
+            DELIMITER ;
