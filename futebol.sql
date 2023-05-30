@@ -146,4 +146,3 @@ BEGIN
         Pontos = (Vitorias * 3) + Empates
     WHERE ID = NEW.TimeID;
 END;
-
