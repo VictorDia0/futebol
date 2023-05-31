@@ -153,3 +153,12 @@ CREATE DATABASE FUTEBOL;
                 END $
 
             DELIMITER ;
+
+
+        INSERT INTO Jogadores (ID, Nome, Posicao, TimeID)
+            VALUES
+                (21, 'Jogador 21', 'Atacante', 1),
+                (22, 'Jogador 22', 'Meio-campista', 2),
+                (23, 'Jogador 23', 'Zagueiro', 3),
+                (24, 'Jogador 24', 'Goleiro', 4),
+                (25, 'Jogador 25', 'Atacante', 5);
